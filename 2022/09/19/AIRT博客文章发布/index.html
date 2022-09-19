@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"aircasairt.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1},"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文主要讲述如何在服务器端发布文章">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AIRT:创建一篇新博客">
+<meta property="og:url" content="http://aircasairt.github.io/2022/09/19/AIRT%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83/index.html">
+<meta property="og:site_name" content="AIRT">
+<meta property="og:description" content="本文主要讲述如何在服务器端发布文章">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-19T02:23:21.112Z">
+<meta property="article:modified_time" content="2022-09-19T03:22:29.454Z">
+<meta property="article:author" content="yuan">
+<meta property="article:tag" content="文章操作">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://aircasairt.github.io/2022/09/19/AIRT%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://aircasairt.github.io/2022/09/19/AIRT%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83/","path":"2022/09/19/AIRT博客文章发布/","title":"AIRT:创建一篇新博客"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>AIRT:创建一篇新博客 | AIRT</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">AIRT</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">ssh连接服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.1.</span> <span class="nav-text">免密登陆设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%BE%91%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">编辑博客流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0"><span class="nav-number">3.1.</span> <span class="nav-text">新建文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%BE%91"><span class="nav-number">3.2.</span> <span class="nav-text">编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6"><span class="nav-number">3.3.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%84%E8%A7%88"><span class="nav-number">3.4.</span> <span class="nav-text">预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0GitHub"><span class="nav-number">3.5.</span> <span class="nav-text">部署到GitHub</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E5%BD%95"><span class="nav-number">4.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E6%96%B9%E5%BC%8F"><span class="nav-number">4.1.</span> <span class="nav-text">网站搭建方式</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">yuan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://aircasairt.github.io/2022/09/19/AIRT%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="yuan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AIRT">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="AIRT:创建一篇新博客 | AIRT">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AIRT:创建一篇新博客
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-09-19 10:23:21 / 修改时间：11:22:29" itemprop="dateCreated datePublished" datetime="2022-09-19T10:23:21+08:00">2022-09-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" itemprop="url" rel="index"><span itemprop="name">说明文档</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本文主要讲述如何在服务器端发布文章</p>
+<span id="more"></span>
+
+<p>发布文章的操作主要需要两点操作：</p>
+<ul>
+<li>本地连接服务器</li>
+<li>markdown编辑</li>
+</ul>
+<p>由于VScode的便捷可行，本文主要介绍基于 <strong>VScode</strong> 的博客发文流程，（也可通过其他软件完成以上两点需求）。相关方案以及参考如下：</p>
+<table>
+<thead>
+<tr>
+<th>需求</th>
+<th>方案</th>
+<th>参考</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ssh连接服务器</td>
+<td>VScode + Remote-SSH</td>
+<td><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote-SSH使用</a></td>
+</tr>
+<tr>
+<td>markdown编辑</td>
+<td>VScode + Markdown Preview Enhanced</td>
+<td><a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/">Markdown基本语法</a></td>
+</tr>
+</tbody></table>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先需要在 <strong>VScode</strong> 中安装插件：在 VScode 扩展里搜索 <strong>Remote-SSH</strong> 和 <strong>Markdown Preview Enhanced</strong> 并安装。</p>
+<h2 id="ssh连接服务器"><a href="#ssh连接服务器" class="headerlink" title="ssh连接服务器"></a>ssh连接服务器</h2><p>参考 <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote-SSH使用</a>方法链接。</p>
+<p>步骤如下：</p>
+<ol>
+<li>点击VScode左侧栏目中的 <strong>远程资源管理器</strong></li>
+<li>点击 <strong>+</strong> 添加新的服务器</li>
+<li>在弹出框中输入命令：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh user_name@IP</span><br></pre></td></tr></table></figure>
+回车，再次回车后根据提示输入密码，即可连接到服务器端。</li>
+<li>此时 <strong>远程资源管理器</strong> 中会出现新添加的设备，右键点击，在当前窗口或者新窗口打开服务器，VScode 底部状态栏显示 IP 地址后，即连接成功。</li>
+</ol>
+<p>以下为服务器的相关信息：</p>
+<table>
+<thead>
+<tr>
+<th>服务器信息</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IP</td>
+<td>****</td>
+</tr>
+<tr>
+<td>用户名</td>
+<td>****</td>
+</tr>
+<tr>
+<td>密码</td>
+<td>****</td>
+</tr>
+</tbody></table>
+<h3 id="免密登陆设置"><a href="#免密登陆设置" class="headerlink" title="免密登陆设置"></a>免密登陆设置</h3><p>由于每次登录或者更换路径都需要输入服务器密码，因此可以对本地免密登录服务器进行设置，具体流程为：</p>
+<p>本地电脑打开 <strong>cmd</strong>，依次输入：</p>
+<p><code>cd ~/.ssh</code></p>
+<p><code>ssh-keygen -t rsa</code></p>
+<p><code>ssh-copy-id -i ~/.ssh/id_rsa.pub user_name@IP</code><br>执行后按照提示输入密码。</p>
+<p><code>ssh user_name@IP</code> 测试是否免密设置成功。</p>
+<h2 id="编辑博客流程"><a href="#编辑博客流程" class="headerlink" title="编辑博客流程"></a>编辑博客流程</h2><p>登陆服务器后，到达名称为 <strong>blog</strong> 的文件夹（所有的文章文件都在 <code>source/_posts</code> 目录下）</p>
+<h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>创建新的文章有两种方式：</p>
+<ol>
+<li>终端输入：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>在 .&#x2F;blog&#x2F;source&#x2F;_posts 目录下新建 .md 文件，推荐第一种，因为相关的标签、分类设置等可以自动生成。</li>
+</ol>
+<h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3><p>可以在本地编辑完成后，将已完成的文章复制到服务器上的 <strong>.md</strong> 文件，无需一直在服务器上操作。撰写markdown文件的具体语法详见 <a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/">Markdown基本语法</a></p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><p>这里主要生成构建搭建网页的文件（由原始文件编译而成）<br>生成命令为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate 或者 hexo g</span><br></pre></td></tr></table></figure>
+
+<h3 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h3><p>更新文章并生成静态文件后，可以在本地浏览器进行预览，此时并没有上传至公网，只能本地访问。以下命令开启：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server 或者 hexo s</span><br></pre></td></tr></table></figure>
+<p>访问  <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 预览，这里本地的 VScode 会弹出访问界面。</p>
+<h3 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h3><p>这里是将生成后的静态文件上传至 <strong>GitHub</strong> 中，以供公网访问。</p>
+<p>部署命令为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy 或者 hexo d</span><br></pre></td></tr></table></figure>
+
+<p>部署后会有一段时间延迟，几分钟后会在网页端更新。</p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="网站搭建方式"><a href="#网站搭建方式" class="headerlink" title="网站搭建方式"></a>网站搭建方式</h3><p>采用 <strong>hexo+GitHub</strong> 方式建立，需在编辑的电脑或者服务器上安装 <strong>node</strong> 等，具体如下 （不涉及写博客操作，非维护人员可以直接跳到下一章节）：</p>
+<table>
+<thead>
+<tr>
+<th>软件</th>
+<th>版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git</td>
+<td>2.20.1</td>
+</tr>
+<tr>
+<td>node.js</td>
+<td>v16.17.0</td>
+</tr>
+<tr>
+<td>hexo</td>
+<td>5.4.2</td>
+</tr>
+<tr>
+<td>npm</td>
+<td>8.15.0</td>
+</tr>
+<tr>
+<td>hexo-theme-NeXT</td>
+<td>v8.13.0</td>
+</tr>
+</tbody></table>
+<p>其会将编辑的原始文件保存在服务器或编辑的电脑端；将编译好的界面发布到GitHub的仓库内；注意稿件的保存，如不涉及保密，可以将其也git到GitHub中（目前没有进行相关设置）。后期更换可以搜索相关版本文档。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%96%87%E7%AB%A0%E6%93%8D%E4%BD%9C/" rel="tag"># 文章操作</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/09/17/hello-world/" rel="prev" title="AIRT:创建一篇新博客">
+                  <i class="fa fa-chevron-left"></i> AIRT:创建一篇新博客
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yuan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"aircasAIRT","repo":"aircasAIRT.github.io","client_id":"52c41040e840f3e1d2e7","client_secret":"9313f98a4b553c05e43468078a8b8bda203a4acb","admin_user":"aircasAIRT","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"e15d0f48da1264a76c4935dd14c5962e"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
